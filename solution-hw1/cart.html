@@ -2,7 +2,7 @@
 <html lang="en">
   <head> 
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <title>Shopping Cart</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,23 +15,75 @@
   </head>
   
   <body>
-    <img class = "logo" src ="assets/logo/logo-01.svg"/>
+    <a href="./index.html"><img class = "logo" src ="assets/logo/logo-01.svg"/></a>
 
     <hr>
 
     <header>
       <nav>
           <a href="./index.html">PRODUCTS</a>
-          <a href="./cart.html">CART</a>
+          <br>
+          <a class ="on" href="./cart.html">CART</a>
       </nav>
     </header>
 
+    <main>
+      <div class ="title">
+        <br>
+        <br>
+        <br>
+  
+        <h1>Shopping Cart</h1>
+  
+        <br>
+      </div>
 
-    <h1>Other Page</h1>
+      <section>
+        <div class="cart-item">
+          <img class="cart-thumbnail" src ="assets/products/original-cinnamon-roll.jpg"/>
+          <p class="remove">Remove</p>
 
-    <p>
-        Hello!
-    </p>
+          <div class="cart-description">
+          
+            <p>Original Cinnamon Roll</p>
+            <p>Glazing: Keep original</p>          
+            <p>Pack Size: 1</p>
+            
+            <br>  
+            <p class ="cart-price">$2.49</p>
+            
+          </div>
+
+          <img class="cart-thumbnail" src ="assets/products/double-chocolate-cinnamon-roll.jpg"/>
+          <p class="remove">Remove</p>
+
+          <div class="cart-description">
+          
+            <p>Double Chocolate Cinnamon Roll</p>
+            <p>Glazing: Sugar milk</p>          
+            <p>Pack Size: 6</p>
+            
+            <br>  
+            <p class ="cart-price">$27.45</p>
+            
+          </div>
+
+        </div>
+
+        <hr class="total">
+
+        <div class="cart-item">
+
+          <p class="total-price">Total: $29.94</p>
+
+          <button id="checkout">Checkout</button>
+
+        </div>  
+      </section>
+
+      
+
+    </main>
 
   </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head> 
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <title>Product Detail page</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,22 +15,83 @@
   </head>
   
   <body>
-    <img class = "logo" src ="assets/logo/logo-01.svg"/>
+    <a href="./index.html"><img class = "logo" src ="assets/logo/logo-01.svg"/></a>
 
     <hr>
 
     <header>
       <nav>
-          <a href="./index.html">PRODUCTS</a>
+          <a class ="on" href="./index.html">PRODUCTS</a>
+          <br>
           <a href="./cart.html">CART</a>
       </nav>
     </header>
 
-    <h1>Other Page</h1>
+    <main>
+      <div class ="title">
+        <br>
+        <br>
+  
+        <h1>Original cinnamon rolls</h1>
+  
+        <br>
+      </div>
 
-    <p>
-        Hello!
-    </p>
+      <section>
+        <div class="item">
+          <img class="thumbnail" src ="assets/products/original-cinnamon-roll.jpg"/>
+          <br>
+          
+        </div>
+
+        <div class="description">
+          <p>
+            Customize our delicious,
+            hand-made cinnamon roll to
+            your liking!
+          </p>
+
+          <br>
+          <br>
+          <br>
+          <br>
+
+          <p>
+            Glazing:
+          </p>
+          <select>
+            <option value="original">Keep original</option> 
+            <option value="sugar">Sugar milk</option> 
+            <option value="vanilla">Vanilla milk</option> 
+            <option value="Chocolate">Double chocolate</option> 
+          </select>
+
+          <br>
+
+          <p>
+            Pack size:
+          </p>
+          <select>
+            <option value="one">1</option> 
+            <option value="three">3</option> 
+            <option value="six">6</option> 
+            <option value="dozen">12</option> 
+          </select>
+
+          <br>
+          
+          <div class="add-cart"> 
+            <p class ="item-price">$2.49</p>
+
+            <button id ="cart">
+              Add to cart
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
 
   </body>
 </html>
