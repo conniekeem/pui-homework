@@ -1,6 +1,4 @@
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     /* Set the default font family and font color for our application. */
@@ -32,6 +30,12 @@ p {
 
 p.price {
     font-size: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+p.price:hover {
+    font-size: 25px;
     text-decoration: none;
     margin-top: auto;
     margin-bottom: auto;
@@ -59,7 +63,7 @@ p.total-price {
 
 p.remove{
     font-size: 15px;
-    font-weight: 800px;
+    font-weight: 700;
     text-align: center;
     margin-top: 5px;
 }
@@ -101,27 +105,29 @@ nav a:hover {
     background-color: yellow;
 }
 
-section a {
-    width: 400px;
+.item-name {
     color: black;
+    text-decoration: none;
+    width: 400px;
     font-size: 25px;
     text-align: left;
 
-    border: none;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-section a:hover {
+.item-name:hover {
+    color: black;
     width: 400px;
+    font-weight: 700;
     font-size: 25px;
     text-align: left;
     
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -130,7 +136,7 @@ section a:hover {
     background-color: #ffff00;
 }
 
-.on{
+.on {
     font-weight: 800;
     background-color: yellow;
 }
@@ -165,6 +171,7 @@ section a:hover {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
     display: block;
 }
 
@@ -216,6 +223,39 @@ section a:hover {
     display: block;
 }
 
+.cart-button{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    
+    width: 175px;
+    border: 4px solid #000000;
+    background-color: yellow;
+    margin-left: 30px;
+    margin-right: auto;
+    padding: 10px;
+    display: inline-block;
+
+    cursor: pointer;
+}
+
+.checkout-button{
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    padding: 10px;
+    display: block;
+
+    
+    border: 3px solid #000000;
+    background-color: yellow;
+}
+
 #button{
     font-size: 25px;
     text-align: left;
@@ -239,37 +279,4 @@ section a:hover {
     display: block;
     
     background-color: #ffff00;
-}
-
-#cart{
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    
-    width: 175px;
-    border: 4px solid #000000;
-    background-color: yellow;
-    margin-left: 30px;
-    margin-right: auto;
-    padding: 10px;
-    display: inline-block;
-
-    cursor: pointer;
-}
-
-#checkout{
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-    
-    width: 150px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0px;
-    padding: 10px;
-    display: block;
-
-    
-    border: 3px solid #000000;
-    background-color: yellow;
 }
