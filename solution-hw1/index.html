@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <title>Product Gallery</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,100;1,200&display=swap"
-      rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
   </head>
   
   <body>
+    <!--Added the logo with a link to the gallery page-->
     <a href="./index.html"><img class = "logo" src ="assets/logo/logo-01.svg" alt = "Image of logo"></a>
-
+    
     <hr>
 
     <header>
+      <!--Gave a navigation section for product and cart-->
       <nav>
+        <!--Added class "on" to bold/highlight on the page it directs to-->
           <a class ="on" href="./index.html">PRODUCTS</a>
           <br>
           <a href="./cart.html">CART</a>
@@ -28,20 +24,19 @@
     </header>
 
     <main>
-      <div class ="title">
-        <br>
-        <br>
-  
-        <h1>Our hand-made cinnamon rolls</h1>
-  
-        <br>
-      </div>
-    
+      <br>
+      <br>
+
+      <h1>Our hand-made cinnamon rolls</h1>
+
+      <br>
+    <!--class item to center the entire section-->
       <div class="item">
+        <!---->
         <a class="item-name" href="./product.html">
           <img class="thumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
           Original cinnamon roll
-          <p id ="price">$2.49</p> 
+          <p class ="price">$2.49</p> 
         </a>
     
         <a href="./product.html">

@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+}
 
 body {
     /* Set the default font family and font color for our application. */
@@ -20,6 +22,7 @@ hr.total {
 h1 {
     font-weight: 100;
     font-size: 40px;
+    text-align: center;
 }
 
 p {
@@ -89,7 +92,6 @@ nav a {
     color: black;
     text-decoration: none;
 
-    
     border: none;
     margin-top: 10px;
     margin-bottom: 30px;
@@ -102,7 +104,17 @@ nav a {
 
 nav a:hover {
     font-weight: 800;
+    font-size: 30px;
+    color: black;
     background-color: yellow;
+
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+
+    text-align: center;
 }
 
 .item-name {
