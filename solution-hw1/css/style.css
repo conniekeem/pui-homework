@@ -33,13 +33,14 @@ p {
 
 p.price {
     font-size: 25px;
-    margin-top: auto;
+    margin-top: 0px;
     margin-bottom: auto;
+    text-align: left;
 }
 
 p.price:hover {
     font-size: 25px;
-    text-decoration: none;
+    font-weight: 100px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -104,25 +105,15 @@ nav a {
 
 nav a:hover {
     font-weight: 800;
-    font-size: 30px;
-    color: black;
     background-color: yellow;
-
-    margin-top: 10px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-
-    text-align: center;
 }
 
-.item-name {
+.item-content {
     color: black;
     text-decoration: none;
     width: 400px;
     font-size: 25px;
-    text-align: left;
+    text-align: center;
 
     margin-top: 5px;
     margin-bottom: 40px;
@@ -131,20 +122,12 @@ nav a:hover {
     display: block;
 }
 
-.item-name:hover {
-    color: black;
-    width: 400px;
+.item-content:hover {
     font-weight: 700;
-    font-size: 25px;
-    text-align: left;
-    
-    margin-top: 5px;
-    margin-bottom: 40px;
+
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    display: block;
-    
     background-color: #ffff00;
 }
 
