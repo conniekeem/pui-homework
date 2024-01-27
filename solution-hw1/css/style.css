@@ -3,75 +3,98 @@
 }
 
 body {
-    /* Set the default font family and font color for our application. */
+    /* Default font for entire webpage */
     font-family: Arial, Helvetica, sans-serif;
-
   }
 
 hr {
+    /* thicker lines */
     border-top: 5px solid;
 }
 
 hr.total {
+    /* thicker lines and shorter line for the total section of cart */
     border-top: 5px solid;
     width: 800px;
     
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 h1 {
+    /* different font size and weight for headings for each page */
     font-weight: 100;
     font-size: 40px;
     text-align: center;
 }
 
 p {
+    /* for general paragraph font size */
     font-size: 25px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-p.price {
+
+/* classes&id for product gallery page */
+#price {
+    /* 
+        different font size and weight for the prices on the product gallery 
+        and to keep it from being affected by the a tag class bolding
+    */
     font-size: 25px;
-    margin-top: 0px;
+    font-weight: 200;
+    
+    margin-top: 20px;
     margin-bottom: auto;
     text-align: left;
 }
 
-p.price:hover {
-    font-size: 25px;
-    font-weight: 100px;
-    margin-top: auto;
+.name{
+    /* always keep underline for the name of item only */
+    text-decoration: underline;
     margin-bottom: auto;
 }
 
-p.cart-price{
-    font-size: 25px;
+
+/* paragraph tag classes for cart page */
+p.remove{
+    /* different font and bold for remove on cart page */
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: underline;
     text-align: center;
-    display: inline-block;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-p.item-price{
+p.cart-price{
+    /* price for each item on the cart page is centered */
     font-size: 25px;
-    font-weight: 700;
     text-align: center;
     display: inline-block;
 }
 
 p.total-price {
+    /* price for total cost of cart is centered */
     font-size: 25px;
     margin-top: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
-p.remove{
-    font-size: 15px;
+
+/* paragraph tag classes for product detail page */
+p.item-price{
+    /* price for item detail is bolded and along the lines of cart button */
+    font-size: 25px;
     font-weight: 700;
     text-align: center;
-    margin-top: 5px;
+    display: inline-block;
 }
 
+/* select for cart page has different font size and box width */
 select {
     font-size: 25px;
     width: 300px;
@@ -79,50 +102,74 @@ select {
     margin-top: 10px;
     margin-bottom: 40px;
     padding: 10px;
-    border: 4px solid #000000;
+    border: 2px solid #000000;
 }
 
-nav {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-nav a {
-    font-size: 30px;
+/* general a tags no underline and color */
+a {
     color: black;
     text-decoration: none;
-
-    border: none;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    display: inline-block;
-
-    text-align: center;
 }
 
+
+/* nav section spacing and size */
+nav {
+    /* width: 200px; */
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+
 nav a:hover {
+    /* when nav links hover turn yellow and bold */
+    /* width: 200px; */
+    height: 100px;
+    font-weight: 800;
+    /* transform: scale(2); */
+    background-color: yellow;
+} 
+
+
+.on {
+    /* when nav links are on the page it directs to, it stays bold and yellow */
     font-weight: 800;
     background-color: yellow;
 }
 
-.item-content {
-    color: black;
-    text-decoration: none;
+.logo {
+     /* logo size */
     width: 400px;
-    font-size: 25px;
+}
+
+/* product gallery section */
+.item {
+    /* item section centering */
     text-align: center;
 
-    margin-top: 5px;
-    margin-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.item-content {
+    /* items images and text are centered */
+    color: black;
+    width: 420px;
+    font-size: 25px;
+    text-align: left;
+
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
     display: block;
 }
 
 .item-content:hover {
+    /* when items images and text hover turn yellow */
     font-weight: 700;
 
     margin-left: auto;
@@ -131,35 +178,8 @@ nav a:hover {
     background-color: #ffff00;
 }
 
-.on {
-    font-weight: 800;
-    background-color: yellow;
-}
-
-.logo {
-    width: 400px;
-}
-
-.title {
-    text-align: center;
-
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.item {
-    width: 400px;
-
-    text-align: center;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    
-    display: block;
-}
-
 .thumbnail {
+    /* image size and border */
     border: 4px solid #000000;
     width: 400px;
    
@@ -170,7 +190,9 @@ nav a:hover {
     display: block;
 }
 
+/* product detail section */
 .description {
+    /* text are left align and smaller width */
     text-align: left;
 
     width: 300px;
@@ -178,38 +200,8 @@ nav a:hover {
     margin-right: auto;
 }
 
-.cart-item {
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 35px;
-}
-
-.cart-thumbnail {
-    border: 4px solid #000000;
-    width: 200px;
-   
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.cart-description {
-    display: inline-block;
-    text-align: Center;
-
-    width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    
-    margin-top: 15px;
-    margin-bottom: 70px;
-}
-
 .add-cart {
-    text-align: center;
-    
+    /* center add cart section */
     width: 300px;
     margin-left: auto;
     margin-right: auto;
@@ -219,12 +211,13 @@ nav a:hover {
 }
 
 .cart-button{
+    /* button is inline with item price and centered */
     font-size: 20px;
     font-weight: 700;
     text-align: center;
     
     width: 175px;
-    border: 4px solid #000000;
+    border: 2px solid #000000;
     background-color: yellow;
     margin-left: 30px;
     margin-right: auto;
@@ -234,7 +227,43 @@ nav a:hover {
     cursor: pointer;
 }
 
-.checkout-button{
+
+/* cart section */
+.cart-item {
+    /* center and width cart section */
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.cart-thumbnail {
+    /* cart images are smaller and centered with bordder */
+    border: 4px solid #000000;
+    width: 200px;
+   
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.cart-description {
+    /* cart descriptions are centered */
+    display: inline-block;
+    text-align: Center;
+
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.checkout-button {
+    /* center checkout button */
     font-size: 20px;
     font-weight: 700;
     text-align: center;
@@ -249,29 +278,4 @@ nav a:hover {
     
     border: 3px solid #000000;
     background-color: yellow;
-}
-
-#button{
-    font-size: 25px;
-    text-align: left;
-    
-    width: 400px;
-    border: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    display: block;
-
-    background-color: transparent;
-    cursor: pointer;
-}
-
-#button:hover{
-    width: 400px;
-    
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    
-    background-color: #ffff00;
 }
