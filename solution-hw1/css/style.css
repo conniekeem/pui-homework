@@ -121,14 +121,12 @@ nav {
     margin-bottom: 100px;
 }
 
-
 nav a:hover {
     /* when nav links hover turn yellow and bold */
-    /* width: 200px; */
     height: 100px;
     font-weight: 800;
-    /* transform: scale(2); */
     background-color: yellow;
+    margin-bottom: 30px;
 } 
 
 
@@ -191,14 +189,6 @@ nav a:hover {
 }
 
 /* product detail section */
-.description {
-    /* text are left align and smaller width */
-    text-align: left;
-
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .add-cart {
     /* center add cart section */
