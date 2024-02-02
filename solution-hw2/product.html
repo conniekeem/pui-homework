@@ -8,66 +8,67 @@
   </head>
   
   <body>
-    <a href="./index.html"><img class = "logo" src ="assets/logo/logo-01.svg" alt = "Image of logo"></a>
-
-    <hr>
-
     <header>
+      <!--Added the logo with a link to the gallery page-->
+      <a href="./index.html">
+        <img class = "logo" src ="assets/logo/logo-01.svg" alt = "Image of logo">
+      </a>
       <!--Gave a navigation section for product and cart-->
-      <nav>
-        <!--Added class "on" to bold/highlight on the page it directs to-->
-          <a class ="on" href="./index.html">PRODUCTS</a>
-          <br>
-          <br>
-          <a href="./cart.html">CART</a>
-      </nav>
+      <div class = "head">
+        <nav>
+          <!--Added class "on" to bold/highlight on the page it directs to-->
+            <a class ="on" href="./index.html">PRODUCTS</a>
+            <a href="./cart.html">CART</a>
+        </nav>
+        <hr>
+        <!--heading for product detail section-->
+        <h1>Original cinnamon roll</h1>
+      </div>
     </header>
 
     <main>
-      <!--heading for product detail section-->
-      <h1>Original cinnamon roll</h1>
-      <br>
-      <br>
       <!--class "item" to center the entire section-->
       <div class="item">
         <img class="product-thumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
         
-        <p>
-          Customize our delicious,
-          hand-made cinnamon roll to
-          your liking!
-        </p>
-        <br>
-        
-        <!--glazing options-->
-        <p>
-          Glazing:
-        </p>
-        <select>
-          <option value="original">Keep original</option> 
-          <option value="sugar">Sugar milk</option> 
-          <option value="vanilla">Vanilla milk</option> 
-          <option value="Chocolate">Double chocolate</option> 
-        </select>
-        <br>
+        <div class = "description">
+          <p>
+            Customize our delicious,
+            hand-made cinnamon roll to
+            your liking!
+          </p>
+          <br>
+          
+          <!--glazing options-->
+          <p>
+            Glazing:
+          </p>
+          <select>
+            <option value="original">Keep original</option> 
+            <option value="sugar">Sugar milk</option> 
+            <option value="vanilla">Vanilla milk</option> 
+            <option value="Chocolate">Double chocolate</option> 
+          </select>
+          <br>
 
-        <!--pack options-->
-        <p>
-          Pack size:
-        </p>
-        <select>
-          <option value="one">1</option> 
-          <option value="three">3</option> 
-          <option value="six">6</option> 
-          <option value="dozen">12</option> 
-        </select>
-        <br>
+          <!--pack options-->
+          <p>
+            Pack size:
+          </p>
+          <select>
+            <option value="one">1</option> 
+            <option value="three">3</option> 
+            <option value="six">6</option> 
+            <option value="dozen">12</option> 
+          </select>
+          <br>
+      
+          <!--add to cart section centered and inline-->
+          <div class="add-cart"> 
+            <p class ="item-price">$2.49</p>
 
-        <!--add to cart section centered and inline-->
-        <div class="add-cart"> 
-          <p class ="item-price">$2.49</p>
-
-          <button class ="cart-button">Add to cart</button>
+            <button class ="cart-button">Add to cart</button>
+          </div>
         </div>
       </div>
     </main>
