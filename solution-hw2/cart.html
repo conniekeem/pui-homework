@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body>
+    <!--Added the logo with a link to the gallery page-->
+    <a href="./index.html"><img class = "logo" src ="assets/logo/logo-01.svg" alt = "Image of logo"></a>
+
+    <hr>
+
+    <header>
+      <!--Gave a navigation section for product and cart-->
+      <nav>
+        <!--Added class "on" to bold/highlight on the page it directs to-->
+          <a href="./index.html">PRODUCTS</a>
+          <br>
+          <br>
+          <a class ="on" href="./cart.html">CART</a>
+      </nav>
+    </header>
+
+    <main>
+      <!--heading for cart section-->
+      <h1>Shopping Cart</h1>
+
+      <br>
+      <br>
+      <br>
+      <section>
+      <!--class "cart item" to center entire section-->
+        <div class="cart-item">
+          <!--item 1-->
+          <img class="cart-thumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
+          <p class="remove">Remove</p>
+
+          <!--class "cart des" to center entire section-->
+          <div class="cart-description">
+          
+            <p>Original Cinnamon Roll</p>
+            <br>
+            <p>Glazing: Keep original</p>        
+            <br>  
+            <p>Pack Size: 1</p>
+            
+            <br>  
+            <p class ="cart-price">$2.49</p>
+            
+          </div>
+
+          <!--item 2-->
+          <img class="cart-thumbnail" src ="assets/products/double-chocolate-cinnamon-roll.jpg" alt = "Image of double chocolate cinnamon roll">
+          <p class="remove">Remove</p>
+
+          <!--class "cart des" to center entire section-->
+          <div class="cart-description">
+          
+            <p>Double Chocolate Cinnamon Roll</p>
+            <br>
+            <p>Glazing: Sugar milk</p>   
+            <br>       
+            <p>Pack Size: 6</p>
+            
+            <br>  
+            <p class ="cart-price">$27.45</p>
+          </div>
+        </div>
+
+        <!--smaller line-->
+        <hr class="total">
+
+        <!--class "cart item" to have price and button inline-->
+        <div class="cart-item">
+          <p class="total-price">Total: $29.94</p>
+          <button class ="checkout-button">Checkout</button>
+        </div> 
+      </section> 
+    </main>
+  </body>
+</html>
