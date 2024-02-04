@@ -17,8 +17,8 @@
       <div class = "head">
         <nav>
           <!--Added class "on" to bold/highlight on the page it directs to-->
-            <a class ="on" href="./index.html">PRODUCTS</a>
-            <a href="./cart.html">CART</a>
+            <a href="./index.html">PRODUCTS</a>
+            <a class ="on" href="./cart.html">CART</a>
         </nav>
         <hr>
         <!--heading for cart section-->
@@ -30,50 +30,60 @@
       <section>
       <!--class "cart item" to center entire section-->
         <div class="cart-item">
-          <!--item 1-->
-          <img class="cart-thumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
-          <p class="remove">Remove</p>
-
           <!--class "cart des" to center entire section-->
-          <div class="cart-description">
-          
-            <p>Original Cinnamon Roll</p>
-            <br>
-            <p>Glazing: Keep original</p>        
-            <br>  
-            <p>Pack Size: 1</p>
-            
-            <br>  
-            <p class ="cart-price">$2.49</p>
-            
+          <div class="item1">
+            <!--item 1-->
+            <div>
+              <img class="cart-thumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
+              <p class="remove">Remove</p>
+            </div>
+
+            <div class="cart-text">
+              <p>Original Cinnamon Roll</p>
+              <p>Glazing: Keep original</p>    
+              <p>Pack Size: 1</p>
+            </div>
+
+            <div>
+              <p class ="cart-price">$2.49</p>
+            </div>
           </div>
-
-          <!--item 2-->
-          <img class="cart-thumbnail" src ="assets/products/double-chocolate-cinnamon-roll.jpg" alt = "Image of double chocolate cinnamon roll">
-          <p class="remove">Remove</p>
-
-          <!--class "cart des" to center entire section-->
-          <div class="cart-description">
           
-            <p>Double Chocolate Cinnamon Roll</p>
-            <br>
-            <p>Glazing: Sugar milk</p>   
-            <br>       
-            <p>Pack Size: 6</p>
-            
-            <br>  
-            <p class ="cart-price">$27.45</p>
+          <div class="item2">
+            <!--item 2-->
+            <div>
+              <img class="cart-thumbnail" src ="assets/products/double-chocolate-cinnamon-roll.jpg" alt = "Image of double chocolate cinnamon roll">
+              <p class="remove">Remove</p>
+            </div>
+
+            <!--class "cart des" to center entire section-->
+            <div class="cart-text">
+              <p>Double Chocolate Cinnamon Roll</p>
+              <p>Glazing: Sugar milk</p>   
+              <p>Pack Size: 6</p>
+            </div>
+
+            <div>
+              <p class ="cart-price">$27.45</p>
+            </div>
           </div>
-        </div>
+        
 
-        <!--smaller line-->
-        <hr class="total">
+          <div class="cart-total">
+            <!--smaller line-->
+            <div>
+              <hr class="total">
+            </div>
 
-        <!--class "cart item" to have price and button inline-->
-        <div class="cart-item">
-          <p class="total-price">Total: $29.94</p>
-          <button class ="checkout-button">Checkout</button>
-        </div> 
+            <!--class "cart item" to have price and button inline-->
+            <div class="total-price"> 
+              <p>Total:</p>
+              <p>$29.94</p>
+            </div>
+            <button class ="checkout-button">Checkout</button>
+          </div>
+          </div>
+        
       </section> 
     </main>
   </body>
