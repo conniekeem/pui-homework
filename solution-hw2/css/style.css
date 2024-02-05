@@ -2,12 +2,12 @@
     box-sizing: border-box;
 }
 
+/* ---------------general tag css---------------- */
 body {
     /* Default font for entire webpage */
-    font-family: Helvetica, sans-serif;
+    font-family: sans-serif;
   }
 
-/* general---------------- */
 p {
     /* for general paragraph font size */
     font-size: 23px;
@@ -23,8 +23,8 @@ a {
 
 /* ------------------head of website with logo and nav-------------------- */
 header {
+    /* applying flex for the head of the page with logo and nav */
     display: flex;
-    flex: wrap;
     flex-direction: row;
     justify-content: flex-end;
 }
@@ -36,16 +36,17 @@ header {
 }
 
 .head {
+    /* the right side of the header nav and headline */
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: space-around;
-    align-items: space-around;
 }
 
 /* nav section spacing and size--- */
 nav {
+    /* applying flex to products and cart to bring to the right side*/
     font-size: 30px;
     width: 100%;
     height: 100px;
@@ -55,6 +56,7 @@ nav {
 }
 
 nav a {
+    /* adding margin to give space between the nav links*/
     margin-right: 75px;
 }
 
@@ -71,7 +73,7 @@ nav a {
 }
 
 .badge {
-    /* position: absolute; */
+    /* adding the badge next to cart */
     width: 23px;
     height: 35px;
     padding-left: 0px;
@@ -105,7 +107,7 @@ h1 {
 
 /* ---------------product gallery section----------------------------------- */
 .item {
-    /* item section centering */
+    /* item section flex and making the rows */
     width: 83%;
     margin-left: auto;
     margin-right: auto;
@@ -176,7 +178,7 @@ h1 {
 
 /* --------------------product detail section------------------------------- */
 .product-detail {
-    /* item section centering */
+    /* item section flex for the image and text */
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -193,6 +195,7 @@ h1 {
 
 
 .product-description {
+    /* item text section flex for the right side */
     width: 300px;
     height: 600px;
     display: flex;
@@ -200,8 +203,8 @@ h1 {
     justify-content: space-between;
 }
 
-/* select for cart page has different font size and box width */
 select {
+    /* select for cart page has different font size and box width */
     font-size: 23px;
     width: 300px;
     
@@ -226,9 +229,6 @@ p.product-price{
     font-weight: 900;
     text-align: center;
 
-    display: flex;
-    align-self: flex-end;
-    
     width: 175px;
     border: 2px solid #000000;
     background-color: yellow;
@@ -242,7 +242,7 @@ p.product-price{
 
 /* --------------------------cart section----------------------------------*/
 .cart-item {
-    /* center and width cart section */
+    /* cart section flex for the items and footer */
     width: 92%;
     display: flex;
     flex-direction: column;
@@ -251,6 +251,7 @@ p.product-price{
 }
 
 .item1 {
+    /* cart section flex for the first item */
     width: 65%;
     display: flex;
     flex-direction: row;
@@ -260,6 +261,7 @@ p.product-price{
 }
 
 .item2 {
+    /* cart section flex for the second item */
     width: 65%;
     display: flex;
     flex-direction: row;
@@ -280,7 +282,6 @@ p.product-price{
     display: block;
 }
 
-/* paragraph tag classes for cart page */
 p.remove{
     /* different font and bold for remove on cart page */
     font-size: 23px;
@@ -296,6 +297,7 @@ p.remove{
 }
 
 .item2 > .cart-text {
+    /* aligning this text box with the first */
     margin-left: 10px;
 }
 
@@ -308,6 +310,7 @@ p.remove{
 }
 
 .cart-total {
+    /* cart section flex for the bottom part with line total and button */
     width: 65%;
     display: flex;
     flex-direction: column;
@@ -316,7 +319,7 @@ p.remove{
 }
 
 .total-price {
-    /* price for total cost of cart is centered */
+    /* flex for the total and total price */
     width: 68%;
     height: auto;
     display: flex;
@@ -325,6 +328,7 @@ p.remove{
 }
 
 .total-price > p {
+    /* centering total and total price */
     margin-top: 10px;
     margin-bottom: 15px;
 }
