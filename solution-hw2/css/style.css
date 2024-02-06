@@ -99,7 +99,7 @@ hr {
 h1 {
     /* different font size and weight for headings for each page */ 
     font-weight: 100;
-    font-size: 30px;   
+    font-size: 25px;   
 
     margin-top: 60px;
     margin-bottom: 100px;
@@ -168,7 +168,7 @@ h1 {
         different font size and weight for the prices on the product gallery 
         and to keep it from being affected by the a tag class bolding
     */
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 200;
     
     margin-top: 20px;
