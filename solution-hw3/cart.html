@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  
+  <body>
+    <header>
+      <!--Added the logo with a link to the gallery page-->
+      <a href="./index.html">
+        <img class = "logo" src ="assets/logo/logo-01.svg" alt = "Image of logo">
+      </a>
+      <!--Gave a navigation section for product and cart-->
+      <div class = "head">
+        <nav>
+          <!--Added class "on" to bold/highlight on the page it directs to-->
+          <a href="./index.html">PRODUCTS</a>
+          <a class ="on" href="./cart.html">CART</a>
+          <span class="badge">2</span>
+        </nav>
+         <!--line-->
+        <hr>
+        <!--heading for cart section-->
+        <h1>Shopping Cart</h1>
+      </div>
+    </header>
+
+    <main>
+      <!--class "cart item" to flex entire section-->
+      <div class="cart-item">
+        <!--item 1 section to flex the content within-->
+        <div class="item1">
+          <!--content for image and remove (left side)-->
+          <div>
+            <img class="cart-thumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
+            <p class="remove">Remove</p>
+          </div>
+          <!--content for text in the middle-->
+          <div class="cart-text">
+            <p>Original Cinnamon Roll</p>
+            <p>Glazing: Keep original</p>    
+            <p>Pack Size: 1</p>
+          </div>
+          <!--content for price on the right side-->
+          <p class ="cart-price">$ 2.49</p>
+        </div>
+        
+        <!--item 2 section to flex the content within-->
+        <div class="item2">
+          <!--content for image and remove (left side)-->
+          <div>
+            <img class="cart-thumbnail" src ="assets/products/double-chocolate-cinnamon-roll.jpg" alt = "Image of double chocolate cinnamon roll">
+            <p class="remove">Remove</p>
+          </div>
+          <!--content for text in the middle-->
+          <div class="cart-text">
+            <p>Double Chocolate Cinnamon Roll</p>
+            <p>Glazing: Sugar milk</p>   
+            <p>Pack Size: 6</p>
+          </div>
+          <!--content for price on the right side-->
+          <div>
+            <p class ="cart-price">$ 27.45</p>
+          </div>
+        </div>
+
+        <!--total section to flex the content within-->
+        <div class="cart-total">
+          <!--line break-->
+          <hr>
+          <!--class "total price" to have total and price inline-->
+          <div class="total-price"> 
+              <p>Total</p>
+              <p>$ 29.94</p>
+          </div>
+          <!--button section-->
+          <div>
+            <button class ="checkout-button">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
