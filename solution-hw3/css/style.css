@@ -118,7 +118,7 @@ h1 {
     justify-content: space-between;
 }
 
-.item-content {
+.itemContent {
     /* items images and text are centered */
     color: black;
     width: 305px;
@@ -133,7 +133,7 @@ h1 {
     display: block;
 }
 
-.item-content:hover {
+.itemContent:hover {
     /* when items images and text hover turn yellow */
     font-weight: 700;
 
@@ -177,7 +177,7 @@ h1 {
 }
 
 /* --------------------product detail section------------------------------- */
-.product-detail {
+.productDetail {
     /* item section flex for the image and text */
     width: 100%;
     display: flex;
@@ -186,7 +186,7 @@ h1 {
     justify-content: center;
 }
 
-.product-thumbnail {
+.productThumbnail {
     /* image size and border */
     border: 4px solid #000000;
     width: 600px;  
@@ -194,7 +194,7 @@ h1 {
 }
 
 
-.product-description {
+.productDescription {
     /* item text section flex for the right side */
     width: 300px;
     height: 600px;
@@ -214,7 +214,7 @@ select {
     border: 2px solid #000000;
 }
 
-p.product-price{
+p.productPrice{
     /* price for item detail is bolded and along the lines of cart button */
     font-size: 19px;
     font-weight: 900;
@@ -223,7 +223,7 @@ p.product-price{
     display: inline-block;
 }
 
-.product-button{
+.productButton{
     /* button is inline with item price and centered */
     font-size: 19px;
     font-weight: 900;
@@ -241,7 +241,7 @@ p.product-price{
 }
 
 /* --------------------------cart section----------------------------------*/
-.cart-item {
+.cartItem {
     /* cart section flex for the items and footer */
     width: 92%;
     display: flex;
@@ -270,7 +270,7 @@ p.product-price{
     margin-bottom: 10px;
 }
 
-.cart-thumbnail {
+.cartThumbnail {
     /* cart images are smaller and centered with bordder */
     border: 4px solid #000000;
     width: 200px;
@@ -290,7 +290,7 @@ p.remove{
     text-align: left;
 }
 
-.cart-text {
+.cartText {
     /* cart descriptions are centered */
     width: 55%;
     height: 200px;
@@ -301,7 +301,7 @@ p.remove{
     margin-left: 10px;
 }
 
-.cart-price{
+.cartPrice{
     /* price for each item on the cart page is centered */
     font-size: 23px;
     
@@ -309,7 +309,7 @@ p.remove{
     margin-top: 85px;
 }
 
-.cart-total {
+.cartTotal {
     /* cart section flex for the bottom part with line total and button */
     width: 65%;
     display: flex;
@@ -318,7 +318,7 @@ p.remove{
     align-items: flex-end;
 }
 
-.total-price {
+.totalPrice {
     /* flex for the total and total price */
     width: 68%;
     height: auto;
@@ -327,13 +327,13 @@ p.remove{
     justify-content: space-between;
 }
 
-.total-price > p {
+.totalPrice > p {
     /* centering total and total price */
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
-.checkout-button {
+.checkoutButton {
     /* center checkout button */
     font-size: 20px;
     font-weight: 900;
