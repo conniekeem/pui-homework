@@ -235,7 +235,6 @@ p.productPrice{
     margin-left: 20px;
     margin-right: auto;
     padding: 10px;
-    display: inline-block;
 
     cursor: pointer;
 }
