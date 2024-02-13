@@ -1,95 +1,72 @@
-// A list of cars with models and descriptions. We will create these
-// using a class in later assignments, but it's not necessary for
-// this simple example.
+// Objects for the glazing options and the packing options
+// each with their own properties of the options that are on dropdown
+const glazingOptions = 
+    {
+      "Keep Original": 0,
+      "Sugar milk": 0,
+      "Vanilla milk": .5,
+      "Double chocolate": 1.5,
+    };
 
-let glazingOptions = [
-    {
-      glaze: "Keep Original",
-      price: 0,
-    },
-    {
-      glaze: "Sugar milk",
-      price: 0,
-    },
-    {
-      glaze: "Vanilla milk",
-      price: .5,
-    },
-    {
-      glaze: "Double chocolate",
-      price: 1.5,
-    },
-];
+const packingOptions = 
+  {
+    "1": 1,
+    "3": 3,
+    "6": 5,
+    "12": 10,
+  };
 
-let packingOptions = [
-  {
-    size: "1",
-    price: 1,
-  },
-  {
-    size: "3",
-    price: 3,
-  },
-  {
-    size: "6",
-    price: 5,
-  },
-  {
-    size: "12",
-    price: 10,
-  },
-];
-
+//find the glazingoptions class on html
 let selectGlazingElement = document.querySelector("#glazingOptions");
 let selectPackingElement = document.querySelector("#packingOptions");
 
-for (let i = 0; i < glazingOptions.length; i++) {
+//loop through the object and add it to the options element 
+//to create the dropdown feature with the names of the objects
+for (const[key, value] of Object.entries(glazingOptions)) {
   let option = document.createElement("option");
-  option.text = glazingOptions[i].glaze;
-  option.value = i;
+  option.text = `${key}`;
+  option.value = `${value}`;
   selectGlazingElement.add(option);
 }
 
-for (let i = 0; i < packingOptions.length; i++) {
+for (const[key, value] of Object.entries(packingOptions)) {
   let option = document.createElement("option");
-  option.text = packingOptions[i].size;
-  option.value = i;
+  option.text = `${key}`;
+  option.value = `${value}`;
   selectPackingElement.add(option);
 }
 
-/**
- * Updates the UI to display a particular car's info.
- * param car A car object containing a model and a description.
- */
-
-function onSelectValueChange() {
-    console.log("You selected  this glaze: " + this.glazingOptions.value);
-		console.log("You selected this pack: " + this.packingOptions.value);
-
-    let glazingIndex = parseInt(this.glazingOptions.value);
-    let glazingPrice = glazingOptions[glazingIndex].price;
-
-    let packIndex = parseInt(this.packingOptions.value);
-    let packPrice = packingOptions[packIndex].price;
-
-    let basePrice = 2.49;
-    let currentPrice = "$"+basePrice;
-
-  // add your code to do update the price ...
-    let priceTotal = ((basePrice + glazingPrice) * packPrice).toFixed(2); 
-    currentPrice = "$"+priceTotal;
-    console.log("priceTotal: " + priceTotal, "basePrice: "+ basePrice, "packPrice: "+ packPrice, "glazingPrice: "+ glazingPrice);
-    displayPrice(currentPrice);
-}
-  
-
+//display the updated price from the options and their price adaptations
 function displayPrice(newPrice) {
   let priceTextElement = document.querySelector(".productPrice");
   priceTextElement.innerText = newPrice;
 }
 
+//have a constant variable for the base price
+//initialize the base price so that it would load with the page
+const basePrice = 2.49;
+displayPrice("$"+basePrice);
+
+//changing the price value depending on the adaptations
+function onSelectValueChange() {
+    // console.log("You selected this glaze: " + this.glazingOptions.value);
+		// console.log("You selected this pack: " + this.packingOptions.value);
+
+    //find and change the value of each option object into a float
+    let glazingPrice = parseFloat(this.glazingOptions.value);
+    let packPrice = parseFloat(this.packingOptions.value);  
+
+    //update/initialize the current price 
+    let currentPrice = "$"+basePrice;
+
+    //price calculations and display it through the current price vari
+    let priceTotal = ((basePrice + glazingPrice) * packPrice).toFixed(2); 
+    currentPrice = "$"+priceTotal;
+    // console.log("priceTotal: " + priceTotal, "basePrice: "+ basePrice, "packPrice: "+ packPrice, "glazingPrice: "+ glazingPrice);
+    //display the updated price
+    displayPrice(currentPrice);
+}
+
+//add the eventlistener when it changes options and start the function
 selectGlazingElement.addEventListener("onchange", onSelectValueChange);
 selectPackingElement.addEventListener("onchange", onSelectValueChange);
-
-// let initialPrice = "$"+$2.49;
-// displayPrice(initialPrice);
