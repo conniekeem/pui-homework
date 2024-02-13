@@ -214,13 +214,21 @@ select {
     border: 2px solid #000000;
 }
 
+.productAdd{
+    /* product add section flex */
+    display: flex;
+    justify-content: flex-end;
+    
+    margin-left: 20px;
+    /* padding-right: 10px; */
+    gap: 25px;
+}
+
 p.productPrice{
     /* price for item detail is bolded and along the lines of cart button */
     font-size: 19px;
     font-weight: 900;
     text-align: center;
-    margin-left: 30px;
-    display: inline-block;
 }
 
 .productButton{
@@ -232,8 +240,6 @@ p.productPrice{
     width: 175px;
     border: 2px solid #000000;
     background-color: yellow;
-    margin-left: 20px;
-    margin-right: auto;
     padding: 10px;
 
     cursor: pointer;
