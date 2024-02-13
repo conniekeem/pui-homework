@@ -218,9 +218,6 @@ select {
     /* product add section flex */
     display: flex;
     justify-content: flex-end;
-    
-    margin-left: 20px;
-    /* padding-right: 10px; */
     gap: 25px;
 }
 
@@ -237,7 +234,7 @@ p.productPrice{
     font-weight: 900;
     text-align: center;
 
-    width: 175px;
+    width: 185px;
     border: 2px solid #000000;
     background-color: yellow;
     padding: 10px;
