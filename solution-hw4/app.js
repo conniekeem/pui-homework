@@ -29,8 +29,8 @@ headerElement.innerText = rollType + ' Cinnamon Roll'
 // Update the image
 const rollImage = document.querySelector('.productThumbnail');
 const rollImageFile = rolls[rollType]['imageFile'];
-console.log(rollImageFile);
-console.log('./assets/products/' + rollImageFile);                      
+// console.log(rollImageFile);
+// console.log('./assets/products/' + rollImageFile);                      
 rollImage.src = './assets/products/' + rollImageFile;        
 
 //empty cart array
@@ -82,7 +82,7 @@ function displayPrice(newPrice) {
 
 //have a constant variable for the base price
 //initialize the base price so that it would load with the page
-const basePrice = 2.49;
+const basePrice = rolls[rollType]['basePrice'];
 displayPrice("$"+basePrice);
 
 //changing the price value depending on the adaptations
