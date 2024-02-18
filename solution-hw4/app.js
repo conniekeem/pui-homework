@@ -22,13 +22,16 @@ console.log(rollType);
 const headerElement = document.querySelector('#rollsHeader'); //or change to class
 headerElement.innerText = rollType + ' Cinnamon Roll'
 
-let filtered_rollImage = rolls.filter((roll) =>
-    roll.imageFile === ".jpg");
-console.log(filtered_rollImage);
+// let filtered_rollImage = rolls.filter((roll) =>
+//     roll.imageFile === ".jpg");
+// console.log(filtered_rollImage);
 
 // Update the image
-const rollImage = document.querySelector('#thumbnail');
-rollImage.src = './products/' + rollType.this.imageFile;
+const rollImage = document.querySelector('.productThumbnail');
+const rollImageFile = rolls[rollType]['imageFile'];
+console.log(rollImageFile);
+console.log('./assets/products/' + rollImageFile);                      
+rollImage.src = './assets/products/' + rollImageFile;        
 
 //empty cart array
 const cart = [];
