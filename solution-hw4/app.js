@@ -21,7 +21,10 @@ headerElement.innerText = rollType + ' Cinnamon Roll';
 const rollImage = document.querySelector('.productThumbnail');
 const rollImageFile = rolls[rollType]['imageFile'];
 // console.log(rollImageFile);                  
-rollImage.src = './assets/products/' + rollImageFile;        
+rollImage.src = './assets/products/' + rollImageFile;    
+
+/* ------------------------------------------------------------------------- */
+// glazing and packing options adaptations
 
 // Objects for the glazing options and the packing options
 // each with their own properties of the options that are on dropdown
@@ -95,6 +98,9 @@ function onSelectValueChange() {
 //add the eventlistener when it changes options and start the function
 selectGlazingElement.addEventListener("onchange", onSelectValueChange);
 selectPackingElement.addEventListener("onchange", onSelectValueChange);
+
+/* ------------------------------------------------------------------------- */
+// adding cart implementation 
 
 //new class for the rolls added to the cart
 class Roll {
