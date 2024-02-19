@@ -19,12 +19,8 @@ console.log(rollType);
 // Now, we will use the URL parameter to update our page.
 
 // Update the header text
-const headerElement = document.querySelector('#rollsHeader'); //or change to class
-headerElement.innerText = rollType + ' Cinnamon Roll'
-
-// let filtered_rollImage = rolls.filter((roll) =>
-//     roll.imageFile === ".jpg");
-// console.log(filtered_rollImage);
+const headerElement = document.querySelector('#rollsHeader');
+headerElement.innerText = rollType + ' Cinnamon Roll';
 
 // Update the image
 const rollImage = document.querySelector('.productThumbnail');
@@ -32,9 +28,6 @@ const rollImageFile = rolls[rollType]['imageFile'];
 // console.log(rollImageFile);
 // console.log('./assets/products/' + rollImageFile);                      
 rollImage.src = './assets/products/' + rollImageFile;        
-
-//empty cart array
-const cart = [];
 
 // Objects for the glazing options and the packing options
 // each with their own properties of the options that are on dropdown
@@ -108,3 +101,28 @@ function onSelectValueChange() {
 //add the eventlistener when it changes options and start the function
 selectGlazingElement.addEventListener("onchange", onSelectValueChange);
 selectPackingElement.addEventListener("onchange", onSelectValueChange);
+
+//new class for the rolls added to the cart
+class Roll {
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+      this.type = rollType;
+      this.glazing =  rollGlazing;
+      this.size = packSize;
+      this.basePrice = basePrice;
+  }
+}
+
+//empty cart
+const cart = [];
+
+//function to update the cart with the rolls we added
+function updateCart() {
+  let glazingName = selectGlazingElement.options[selectGlazingElement.selectedIndex].text;
+  let packingName = selectPackingElement.options[selectPackingElement.selectedIndex].text;
+  cart.push(new Roll(rollType, glazingName, packingName, basePrice));
+  console.log(cart);
+}
+
+//make the button activate the function
+const btnCart = document.querySelector('.productButton');
+btnCart.onclick = updateCart;
