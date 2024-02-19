@@ -1,22 +1,17 @@
-// First, we get the query string from the URL. This is the list of parameters
-// that begins with a question mark. (These are known as "search parameters")
+// query string from the URL that begins with a question mark
 const queryString = window.location.search;
+// console.log(queryString);
 
-console.log(queryString);
-
-// Then, we use the query string to create a URLSearchParams object:
+// use query string to create a URLSearchParams object:
 const params = new URLSearchParams(queryString);
+// console.log(params);
 
-console.log(params);
-
-// Finally, we can access the parameter we want using the "get" method:
+// access the parameter we want using the "get" method:
 const rollType = params.get('roll')
-
-console.log(rollType);
+// console.log(rollType);
 
 /* ------------------------------------------------------------------------- */
-
-// Now, we will use the URL parameter to update our page.
+// use the URL parameter to update our page.
 
 // Update the header text
 const headerElement = document.querySelector('#rollsHeader');
@@ -25,8 +20,7 @@ headerElement.innerText = rollType + ' Cinnamon Roll';
 // Update the image
 const rollImage = document.querySelector('.productThumbnail');
 const rollImageFile = rolls[rollType]['imageFile'];
-// console.log(rollImageFile);
-// console.log('./assets/products/' + rollImageFile);                      
+// console.log(rollImageFile);                  
 rollImage.src = './assets/products/' + rollImageFile;        
 
 // Objects for the glazing options and the packing options
@@ -73,7 +67,7 @@ function displayPrice(newPrice) {
   priceTextElement.innerText = newPrice;
 }
 
-//have a constant variable for the base price
+//have a constant variable for the base price and find the new data from the rollsdata.js
 //initialize the base price so that it would load with the page
 const basePrice = rolls[rollType]['basePrice'];
 displayPrice("$"+basePrice);
@@ -119,6 +113,7 @@ const cart = [];
 function updateCart() {
   let glazingName = selectGlazingElement.options[selectGlazingElement.selectedIndex].text;
   let packingName = selectPackingElement.options[selectPackingElement.selectedIndex].text;
+  //add the rolls to the cart array
   cart.push(new Roll(rollType, glazingName, packingName, basePrice));
   console.log(cart);
 }
