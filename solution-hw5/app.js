@@ -112,6 +112,9 @@ class Roll {
   }
 }
 
+//set
+const cartSet = new Set();
+
 //empty cart
 const cart = [];
 
