@@ -23,18 +23,18 @@ function addNewRoll(rollType, rollGlazing, packSize, basePrice) {
 //have to create NEW html element for the NEW notecard by creating a template
 function createElement(roll){
   //find the html element that can be the new template for this new notecards
-  const template = document.querySelector('#rollTemplate');
+  const template = document.querySelector("#rollTemplate");
   const clone = template.content.cloneNode(true);
 
-  roll.element = clone.querySelector('.rollItem');
+  roll.element = clone.querySelector(".rollItem");
   // console.log(roll.element);
   
-  const btnRemove = roll.element.querySelector('.remove');
-  btnRemove.addEventListener('click', () => {
+  const btnRemove = roll.element.querySelector(".remove");
+  btnRemove.addEventListener("click", () => {
       deleteRoll(roll);
   })
 
-  const cartListElement = document.querySelector('.cartItem');
+  const cartListElement = document.querySelector(".cartItem");
   cartListElement.prepend(roll.element);
 
   updateElement(roll);
@@ -60,11 +60,11 @@ const packingOptions =
 
 function updateElement(roll) {
   //updating each element of the notecards
-  const rollImageElement = roll.element.querySelector('.cartThumbnail');
-  const rollNameElement = roll.element.querySelector('.rollName');
-  const rollGlazeElement = roll.element.querySelector('.rollGlaze');
-  const rollPackElement = roll.element.querySelector('.rollPack');
-  const rollPriceElement = roll.element.querySelector('.cartPrice');
+  const rollImageElement = roll.element.querySelector(".cartThumbnail");
+  const rollNameElement = roll.element.querySelector(".rollName");
+  const rollGlazeElement = roll.element.querySelector(".rollGlaze");
+  const rollPackElement = roll.element.querySelector(".rollPack");
+  const rollPriceElement = roll.element.querySelector(".cartPrice");
 
   // console.log(typeof(roll.glazing));
   // console.log(glazingOptions[roll.glazing]);
@@ -74,11 +74,16 @@ function updateElement(roll) {
   let packPrice = parseFloat(packingOptions[roll.size]);
   // console.log(packPrice);
 
-  rollImageElement.src = './assets/products/' + rolls[roll.type]["imageFile"];
+  rollImageElement.src = "./assets/products/" + rolls[roll.type]["imageFile"];
   rollNameElement.innerText = roll.type + " Cinnamon Roll";
   rollGlazeElement.innerText = roll.glazing;
   rollPackElement.innerText = "Pack size: " + roll.size;
-  rollPriceElement.innerText = "$" + ((roll.basePrice + glazingPrice) * packPrice).toFixed(2); ;
+
+  let rollItemPrice = ((roll.basePrice + glazingPrice) * packPrice).toFixed(2);
+
+  rollPriceElement.innerText = "$" + rollItemPrice;
+
+
 }
 
 function deleteRoll(roll){
@@ -87,30 +92,37 @@ function deleteRoll(roll){
   cartSet.delete(roll);
 }
 
+function updateTotalPrice() {
+  const cartTotalElement = document.querySelector(".totalPrice");
+  if (cartSet.length === 0) {
+    cartTotalElement.innerText = "$" + 0.00;
+  }
+}
+
 //implement two instances in creating new notecards
 const originalRoll = addNewRoll(
   "Original",
   "Sugar milk",
   "1",
-  rolls["Original"]['basePrice']
+  rolls["Original"]["basePrice"]
 );
 const walnutRoll = addNewRoll(
   "Walnut",
   "Vanilla milk",
   "12",
-  rolls["Walnut"]['basePrice']
+  rolls["Walnut"]["basePrice"]
 );
 const raisinRoll = addNewRoll(
   "Raisin",
   "Sugar milk",
   "3",
-  rolls["Raisin"]['basePrice']
+  rolls["Raisin"]["basePrice"]
 );
 const appleRoll = addNewRoll(
   "Apple",
   "Keep original",
   "3",
-  rolls["Apple"]['basePrice']
+  rolls["Apple"]["basePrice"]
 );
 
 //need to iterate all the objects in the set

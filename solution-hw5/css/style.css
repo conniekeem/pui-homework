@@ -312,7 +312,7 @@ p.productPrice{
     align-items: flex-end;
 }
 
-.totalPrice {
+.totalSection {
     /* flex for the total and total price */
     width: 68%;
     height: auto;
@@ -321,7 +321,7 @@ p.productPrice{
     justify-content: space-between;
 }
 
-.totalPrice > p {
+.totalSection > p {
     /* centering total and total price */
     margin-top: 10px;
     margin-bottom: 15px;

@@ -7,21 +7,21 @@ const params = new URLSearchParams(queryString);
 // console.log(params);
 
 // access the parameter we want using the "get" method:
-const rollType = params.get('roll')
+const rollType = params.get("roll")
 // console.log(rollType);
 
 /* ------------------------------------------------------------------------- */
 // use the URL parameter to update our page.
 
 // Update the header text
-const headerElement = document.querySelector('#rollsHeader');
-headerElement.innerText = rollType + ' Cinnamon Roll';
+const headerElement = document.querySelector("#rollsHeader");
+headerElement.innerText = rollType + " Cinnamon Roll";
 
 // Update the image
-const rollImage = document.querySelector('.productThumbnail');
-const rollImageFile = rolls[rollType]['imageFile'];
+const rollImage = document.querySelector(".productThumbnail");
+const rollImageFile = rolls[rollType]["imageFile"];
 // console.log(rollImageFile);                  
-rollImage.src = './assets/products/' + rollImageFile;    
+rollImage.src = "./assets/products/" + rollImageFile;    
 
 /* ------------------------------------------------------------------------- */
 // glazing and packing options adaptations
@@ -72,7 +72,7 @@ function displayPrice(newPrice) {
 
 //have a constant variable for the base price and find the new data from the rollsdata.js
 //initialize the base price so that it would load with the page
-const basePrice = rolls[rollType]['basePrice'];
+const basePrice = rolls[rollType]["basePrice"];
 displayPrice("$"+basePrice);
 
 //changing the price value depending on the adaptations
@@ -115,5 +115,5 @@ function updateCart() {
 }
 
 //make the button activate the function
-const btnCart = document.querySelector('.productButton');
+const btnCart = document.querySelector(".productButton");
 btnCart.onclick = updateCart;
