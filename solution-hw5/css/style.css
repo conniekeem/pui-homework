@@ -252,7 +252,7 @@ p.productPrice{
     align-content: flex-end;
 }
 
-#rollItems {
+.rollItem {
     /* cart section flex for the first item */
     width: 65%;
     display: flex;

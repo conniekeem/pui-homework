@@ -6,7 +6,7 @@ class Roll {
       this.size = packSize;
       this.basePrice = basePrice;
 
-      // this.element = null;
+      this.element = null;
 }
 }
 
@@ -26,7 +26,8 @@ function createElement(roll){
   const template = document.querySelector('#rollTemplate');
   const clone = template.content.cloneNode(true);
 
-  roll.element = clone.querySelector('.roll');
+  roll.element = clone.querySelector('.rollItem');
+  // console.log(roll.element);
   
   const btnRemove = roll.element.querySelector('.remove');
   btnRemove.addEventListener('click', () => {
@@ -43,7 +44,7 @@ function createElement(roll){
 // each with their own properties of the options that are on dropdown
 const glazingOptions = 
   {
-    "Keep Original": 0,
+    "Keep original": 0,
     "Sugar milk": 0,
     "Vanilla milk": .5,
     "Double chocolate": 1.5,
@@ -65,19 +66,22 @@ function updateElement(roll) {
   const rollPackElement = roll.element.querySelector('.rollPack');
   const rollPriceElement = roll.element.querySelector('.cartPrice');
 
-  let glazingPrice = parseFloat(roll.rollGlazing.glazingOptions.value);
-  console.log(glazingPrize);
-  let packPrice = parseFloat(roll.packSize.packingOptions.value);
-  console.log(packPrize);
+  // console.log(typeof(roll.glazing));
+  // console.log(glazingOptions[roll.glazing]);
 
-  rollImageElement.src = './assets/products/' + rolls[roll.rollType]["imageFile"];
-  rollNameElement.innerText = roll.rollType;
-  rollGlazeElement.innerText = roll.rollGlazing;
-  rollPackElement.innerText = "Pack size: " + roll.packSize;
+  let glazingPrice = parseFloat(glazingOptions[roll.glazing]);
+  // console.log(glazingPrice);
+  let packPrice = parseFloat(packingOptions[roll.size]);
+  // console.log(packPrice);
+
+  rollImageElement.src = './assets/products/' + rolls[roll.type]["imageFile"];
+  rollNameElement.innerText = roll.type + " Cinnamon Roll";
+  rollGlazeElement.innerText = roll.glazing;
+  rollPackElement.innerText = "Pack size: " + roll.size;
   rollPriceElement.innerText = "$" + ((roll.basePrice + glazingPrice) * packPrice).toFixed(2); ;
 }
 
-function deleteNote(roll){
+function deleteRoll(roll){
   // have to remove the notecard element AND the set
   roll.element.remove();
   cartSet.delete(roll);
@@ -86,25 +90,25 @@ function deleteNote(roll){
 //implement two instances in creating new notecards
 const originalRoll = addNewRoll(
   "Original",
-  "Sugar Milk",
+  "Sugar milk",
   "1",
   rolls["Original"]['basePrice']
 );
 const walnutRoll = addNewRoll(
   "Walnut",
-  "Vanilla Milk",
+  "Vanilla milk",
   "12",
   rolls["Walnut"]['basePrice']
 );
 const raisinRoll = addNewRoll(
   "Raisin",
-  "Sugar Milk",
+  "Sugar milk",
   "3",
   rolls["Raisin"]['basePrice']
 );
 const appleRoll = addNewRoll(
   "Apple",
-  "Original",
+  "Keep original",
   "3",
   rolls["Apple"]['basePrice']
 );
