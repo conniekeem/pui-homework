@@ -28,8 +28,8 @@ function createElement(roll){
 
   roll.element = clone.querySelector('.roll');
   
-  const btnDelete = roll.element.querySelector('.remove');
-  btnDelete.addEventListener('click', () => {
+  const btnRemove = roll.element.querySelector('.remove');
+  btnRemove.addEventListener('click', () => {
       deleteRoll(roll);
   })
 
