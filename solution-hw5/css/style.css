@@ -252,7 +252,7 @@ p.productPrice{
     align-content: flex-end;
 }
 
-.item1 {
+#rollItems {
     /* cart section flex for the first item */
     width: 65%;
     display: flex;
@@ -282,14 +282,6 @@ p.productPrice{
     margin-right: auto;
     margin-bottom: 20px;
     display: block;
-}
-
-p.remove{
-    /* different font and bold for remove on cart page */
-    font-size: 23px;
-    font-weight: 900;
-    text-decoration: underline;
-    text-align: left;
 }
 
 .cartText {
@@ -335,6 +327,19 @@ p.remove{
     margin-bottom: 15px;
 }
 
+.remove{
+    /* different font and bold for remove on cart page */
+    font-size: 23px;
+    font-weight: 900;
+    text-decoration: underline;
+    text-align: left;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
 .checkoutButton {
     /* center checkout button */
     font-size: 20px;
@@ -348,4 +353,6 @@ p.remove{
 
     border: 3px solid #000000;
     background-color: yellow;
+
+    cursor: pointer;
 }
