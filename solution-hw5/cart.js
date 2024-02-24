@@ -87,7 +87,7 @@ function updateElement(roll) {
   rollImageElement.src = "./assets/products/" + rolls[roll.type]["imageFile"];
   rollNameElement.innerText = roll.type + " Cinnamon Roll";
   rollGlazeElement.innerText = roll.glazing;
-  rollPackElement.innerText = "Pack size: " + roll.size;
+  rollPackElement.innerText = "Pack Size: " + roll.size;
   rollPriceElement.innerText = "$" + rollItemPrice;
 }
 
