@@ -102,6 +102,18 @@ selectPackingElement.addEventListener("onchange", onSelectValueChange);
 /* ------------------------------------------------------------------------- */
 // adding cart implementation 
 
+//new class for the rolls added to the cart
+class Roll {
+  constructor(rollType, rollGlazing, packSize, basePrice) {
+      this.type = rollType;
+      this.glazing =  rollGlazing;
+      this.size = packSize;
+      this.basePrice = basePrice;
+
+      this.element = null;
+}
+}
+
 //empty cart
 const cart = [];
 
