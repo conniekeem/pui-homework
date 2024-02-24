@@ -119,9 +119,8 @@ function updateTotalPrice() {
       totalPrice += parseFloat(rollPrice);
       // console.log(totalPrice);
   }
-
   //if we removed all the rolls from set, then make total 0
-  if (cartSet.size == 0) {
+  if (cartSet.size === 0) {
     totalPrice = 0.00;
   }
 
