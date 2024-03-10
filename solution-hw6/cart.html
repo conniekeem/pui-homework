@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="rollsData.js"></script>
+    <script defer src="cart.js"></script>
+  </head>
+  
+  <body>
+    <header>
+      <!--Added the logo with a link to the gallery page-->
+      <a href="./index.html">
+        <img class = "logo" src ="assets/logo/logo-01.svg" alt = "Image of logo">
+      </a>
+      <!--Gave a navigation section for product and cart-->
+      <div class = "head">
+        <nav>
+          <!--Added class "on" to bold/highlight on the page it directs to-->
+          <a href="./index.html">PRODUCTS</a>
+          <a class ="on" href="./cart.html">CART</a>
+          <span class="badge">2</span>
+        </nav>
+         <!--line-->
+        <hr>
+        <!--heading for cart section-->
+        <h1>Shopping Cart</h1>
+      </div>
+    </header>
+
+    <main>
+      <!--class "cart item" to flex entire section-->
+      <div class="cartItem">
+
+        <template id ="rollTemplate">
+          <!--roll items section-->
+          <div class="rollItem">
+            <!--content for image and remove (left side)-->
+            <div>
+              <img class="cartThumbnail" src ="assets/products/original-cinnamon-roll.jpg" alt = "Image of original cinnamon roll">
+              <button class="remove">Remove</button>
+            </div>
+            <!--content for text in the middle-->
+            <div class="cartText">
+              <p class="rollName">Original Cinnamon Roll</p>
+              <p class="rollGlaze">Glazing: Keep original</p>    
+              <p class="rollPack">Pack Size: 1</p>
+            </div>
+            <!--content for price on the right side-->
+            <p class ="cartPrice">$ 2.49</p>
+          </div>
+    
+        </template>
+        
+          <!--total section to flex the content within-->
+          <div class="cartTotal">
+            <!--line break-->
+            <hr>
+            <!--class "total price" to have total and price inline-->
+            <div class="totalSection"> 
+                <p>Total</p>
+                <p class="totalPrice">$ 29.94</p>
+            </div>
+            <!--button section-->
+            <div>
+              <button class ="checkoutButton">Checkout</button>
+            </div>
+          </div>
+
+      </div>
+    </main>
+  </body>
+</html>
