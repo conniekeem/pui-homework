@@ -10,7 +10,6 @@ function updateBadge(num) {
 function numFromLocalStorage() {
   const cartArrayString = localStorage.getItem('storedRolls');
   const cartArray = JSON.parse(cartArrayString);
-  console.log(cartArray);
   return cartArray.length;
 }
 
