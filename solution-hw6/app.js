@@ -1,14 +1,11 @@
 // query string from the URL that begins with a question mark
 const queryString = window.location.search;
-// console.log(queryString);
 
 // use query string to create a URLSearchParams object:
 const params = new URLSearchParams(queryString);
-// console.log(params);
 
 // access the parameter we want using the "get" method:
 const rollType = params.get("roll")
-// console.log(rollType);
 
 /* ------------------------------------------------------------------------- */
 // use the URL parameter to update our page.
@@ -20,8 +17,7 @@ headerElement.innerText = rollType + " Cinnamon Roll";
 // Update the image
 const rollImage = document.querySelector(".productThumbnail");
 const rollImageFile = rolls[rollType]["imageFile"];
-// console.log(rollImageFile);                  
-rollImage.src = "./assets/products/" + rollImageFile;    
+rollImage.src = "./assets/products/" + rollImageFile;
 
 /* ------------------------------------------------------------------------- */
 // glazing and packing options adaptations
@@ -29,12 +25,12 @@ rollImage.src = "./assets/products/" + rollImageFile;
 // Objects for the glazing options and the packing options
 // each with their own properties of the options that are on dropdown
 const glazingOptions = 
-    {
-      "Keep Original": 0,
-      "Sugar milk": 0,
-      "Vanilla milk": .5,
-      "Double chocolate": 1.5,
-    };
+  {
+    "Keep original": 0,
+    "Sugar milk": 0,
+    "Vanilla milk": .5,
+    "Double chocolate": 1.5,
+  };
 
 const packingOptions = 
   {
@@ -77,9 +73,6 @@ displayPrice("$"+basePrice);
 
 //changing the price value depending on the adaptations
 function onSelectValueChange() {
-    // console.log("You selected this glaze: " + this.glazingOptions.value);
-		// console.log("You selected this pack: " + this.packingOptions.value);
-
     //find and change the value of each option object into a float
     let glazingPrice = parseFloat(this.glazingOptions.value);
     let packPrice = parseFloat(this.packingOptions.value);  
@@ -90,7 +83,7 @@ function onSelectValueChange() {
     //price calculations and display it through the current price vari
     let priceTotal = ((basePrice + glazingPrice) * packPrice).toFixed(2); 
     currentPrice = "$"+priceTotal;
-    // console.log("priceTotal: " + priceTotal, "basePrice: "+ basePrice, "packPrice: "+ packPrice, "glazingPrice: "+ glazingPrice);
+    
     //display the updated price
     displayPrice(currentPrice);
 }
@@ -102,7 +95,7 @@ selectPackingElement.addEventListener("onchange", onSelectValueChange);
 /* ------------------------------------------------------------------------- */
 // adding cart implementation 
 
-//new class for the rolls added to the cart
+// new class for the rolls added to the cart
 class Roll {
   constructor(rollType, rollGlazing, packSize, basePrice) {
       this.type = rollType;
@@ -111,18 +104,24 @@ class Roll {
       this.basePrice = basePrice;
 
       this.element = null;
-}
+  }
 }
 
 //empty cart
 const cart = [];
 
-//function to update the cart with the rolls we added
+//function to update the cart with the current rolls, glazing, size and price
+//that were added with the button
 function updateCart() {
   let glazingName = selectGlazingElement.options[selectGlazingElement.selectedIndex].text;
   let packingName = selectPackingElement.options[selectPackingElement.selectedIndex].text;
   //add the rolls to the cart array
   cart.push(new Roll(rollType, glazingName, packingName, basePrice));
+  //save to the local storage
+  saveToLocalStorage();
+  //also update the badge whenever the cart is upated from adding new rolls
+  updateBadge(numFromLocalStorage());
+  //print the current cart of rolls
   console.log(cart);
 }
 
@@ -130,38 +129,29 @@ function updateCart() {
 const btnCart = document.querySelector(".productButton");
 btnCart.onclick = updateCart;
 
-/**** ADD TO CART ***************************************************/
-
-function addCart() {
-  // Nothing here yet!
-  // console.log("Submitted Note!")
-  const inputImageURL = document.querySelector("#note-editor-image");
-  const inputTitle = document.querySelector("#note-editor-title");
-  const inputBody = document.querySelector('#note-editor-body');
-  
-  const newNoteCard = addNewNote(inputImageURL.src, inputTitle.value, inputBody.value);
-  createElement(newNoteCard);
-  saveToLocalStorage();
-  console.log(newNoteCard);
-}
-
+//saves the data inside the cart array to the storedRolls local storage
 function saveToLocalStorage() {
   // transfer set into a array BECAUSE JSON CAN ONLY GET ARRAY THAT IS INDEXED
-  const cartArray = Array.from(notecardSet);
-  const notecardArrayString = JSON.stringify(notecardArray);
-  localStorage.setItem('storedNotes', notecardArrayString);
-  // console.log(notecardArrayString);
+  const cartArrayString = JSON.stringify(cart);
+  localStorage.setItem('storedRolls', cartArrayString);
+  //print the rolls that are stored
+  console.log(localStorage.getItem('storedRolls'));
 }
 
+//retrieve the data from the local storage when we revisit the page
 function retrieveFromLocalStorage() {
-  const notecardArrayString = localStorage.getItem('storedNotes');
-  const notecardArray = JSON.parse(notecardArrayString);
-  for (const noteData of notecardArray) {
-    const notecard = addNewNote(noteData.noteImageURL, noteData.noteTitle, noteData.noteBody);
-    createElement(notecard);
+  const cartArrayString = localStorage.getItem('storedRolls');
+  const cartArray = JSON.parse(cartArrayString);
+  //go through the data and push them into the cart again
+  for (const cartData of cartArray) {
+    const rolls = new Roll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+    cart.push(rolls);
   }
 }
 
-if (localStorage.getItem('storedNotes') != null){ 
+if (localStorage.getItem('storedRolls') != null){ 
   retrieveFromLocalStorage();
-} 
+}
+
+//print the stored rolls 
+console.log(localStorage.getItem('storedRolls'));

@@ -7,7 +7,7 @@ class Roll {
       this.basePrice = basePrice;
 
       this.element = null;
-}
+  }
 }
 
 //mew set to contain all the rolls in the cart
@@ -28,7 +28,6 @@ function createElement(roll){
 
   //clone that specific class
   roll.element = clone.querySelector(".rollItem");
-  // console.log(roll.element);
   
   //have the button remove delete the roll with the function
   const btnRemove = roll.element.querySelector(".remove");
@@ -71,14 +70,9 @@ function updateElement(roll) {
   const rollPackElement = roll.element.querySelector(".rollPack");
   const rollPriceElement = roll.element.querySelector(".cartPrice");
 
-  // console.log(typeof(roll.glazing));
-  // console.log(glazingOptions[roll.glazing]);
-
   //getting the values of each glaze and price of each roll
   let glazingPrice = parseFloat(glazingOptions[roll.glazing]);
-  // console.log(glazingPrice);
   let packPrice = parseFloat(packingOptions[roll.size]);
-  // console.log(packPrice);
 
   //re-calcuating the price of each roll with their options
   let rollItemPrice = ((roll.basePrice + glazingPrice) * packPrice).toFixed(2);
@@ -96,8 +90,12 @@ function deleteRoll(roll){
   // have to remove the notecard element AND the set
   roll.element.remove();
   cartSet.delete(roll);
-  //keep updating even when removing
+  //keep updating the total even when removing
   updateTotalPrice();
+  //save the newly updated cart list of rolls even after removing
+  saveToLocalStorage();
+  //update the badge after looking into the newly updated local storage
+  updateBadge(numFromLocalStorage());
 }
 
 //udpating the total price of each roll and their options price adaptations
@@ -106,8 +104,6 @@ function updateTotalPrice() {
   //setting the total price
   let totalPrice = 0;
 
-  // console.log(cartSet.size);
-
   //looping through the rolls to get each of their price again
   //and summing them all
   for (const roll of cartSet) {
@@ -115,10 +111,9 @@ function updateTotalPrice() {
       let packPrice = parseFloat(packingOptions[roll.size]);
 
       let rollPrice = ((roll.basePrice + glazingPrice) * packPrice).toFixed(2);
-      // console.log(rollPrice);
       totalPrice += parseFloat(rollPrice);
-      // console.log(totalPrice);
   }
+
   //if we removed all the rolls from set, then make total 0
   if (cartSet.size === 0) {
     totalPrice = 0.00;
@@ -128,35 +123,42 @@ function updateTotalPrice() {
   cartTotalElement.innerText = "$" + (totalPrice).toFixed(2);
 }
 
-//implement the 4 rolls
-const appleRoll = addNewRoll(
-  "Apple",
-  "Keep original",
-  "3",
-  rolls["Apple"]["basePrice"]
-);
-const raisinRoll = addNewRoll(
-  "Raisin",
-  "Sugar milk",
-  "3",
-  rolls["Raisin"]["basePrice"]
-);
-const walnutRoll = addNewRoll(
-  "Walnut",
-  "Vanilla milk",
-  "12",
-  rolls["Walnut"]["basePrice"]
-);
-const originalRoll = addNewRoll(
-  "Original",
-  "Sugar milk",
-  "1",
-  rolls["Original"]["basePrice"]
-);
-
 //need to iterate all the objects in the set
 for (const roll of cartSet) {
   createElement(roll);
   //keep updating the price for each added roll
   updateTotalPrice();
 }
+
+/**** ADD TO CART ***************************************************/
+
+//saves the data inside the cart array to the local storage after being called in
+//the delete rolls function so we could update and save the cart list after removing
+function saveToLocalStorage() {
+  // transfer set into a array BECAUSE JSON CAN ONLY GET ARRAY THAT IS INDEXED
+  const cartArray = Array.from(cartSet);
+  const cartArrayString = JSON.stringify(cartArray);
+  localStorage.setItem('storedRolls', cartArrayString);
+  console.log(localStorage.getItem('storedRolls'));
+}
+
+//retrieve the data from the local storage to get the correct rolls that we added
+//also to continue having them when we revisit the page
+function retrieveFromLocalStorage() {
+  const cartArrayString = localStorage.getItem('storedRolls');
+  const cartArray = JSON.parse(cartArrayString);
+  //go through the data from the cart array and create the elements in cart page
+  for (const cartData of cartArray) {
+    const roll = addNewRoll(cartData.type, cartData.glazing, cartData.size, cartData.basePrice);
+    createElement(roll);
+  }
+  //then update the total price with each new element
+  updateTotalPrice();
+}
+
+if (localStorage.getItem('storedRolls') != null){ 
+  retrieveFromLocalStorage();
+}
+
+//print the stored rolls 
+console.log(localStorage.getItem('storedRolls'));
